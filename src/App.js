@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Layout } from "antd";
+import { Provider } from "react-redux";
+import "./App.css";
+import ModalManager from "./Components/ModalController/ModalManager";
+import NavBar from "./Components/Navigation/NavBar";
+import configStore from "./Store/Reducers/configStore";
 
+const { Header, Content } = Layout;
+const store = configStore();
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div>
+        <Layout>
+          <Header>
+            <NavBar/>
+          </Header>
+          <Content>
+            <ModalManager />
+          </Content>
+        </Layout>
+      </div>
+    </Provider>
   );
 }
 
