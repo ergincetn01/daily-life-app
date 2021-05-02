@@ -1,11 +1,10 @@
 import * as actionTypes from "../Actions/ActionTypes";
 
 const initialState = {
- // notes: [],
  notes:
     {
       number:0,
-      size :10,
+      size :20,
       sort: {
           sorted:false ,
           unsorted: true,

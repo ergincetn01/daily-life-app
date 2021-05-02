@@ -1,12 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import LoginModal from "../Modals/AuthModals/LoginModal";
-import SignupModal from "../Modals/AuthModals/SignupModal";
+import RegisterModal from "../Modals/AuthModals/RegisterModal";
 
 export default function ModalManager() {
   const modalRepo = {
       LoginModal,
-      SignupModal,
+      RegisterModal,
     
   };
   const currentModal = useSelector((state) => state.modals);
